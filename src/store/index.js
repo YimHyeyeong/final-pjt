@@ -31,13 +31,14 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async LoadWeatherMovie ({commit}) {
+    async LoadWeatherMovie ({commit}, data) {
+      console.log(data, '위치정보');
       const response1 = await axios({
         method:'get',
         url: 'https://api.openweathermap.org/data/2.5/weather',
         params: {
-          lat:37.56826,
-          lon: 126.977829,
+          lat: data['latitude'],
+          lon: data['longitude'],
           APPID: process.env.VUE_APP_WEATHER_APPID
         }
       })

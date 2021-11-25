@@ -1,13 +1,13 @@
 <template>
-  <div class="weather-position">
-    
+  <div class="weather-position" @mouseover="getAddress">
     <div style="margin-top:180px;">
       <p class="font-style1" >{{seoulWeather.main}}</p>
     </div>
 
     <div class="center-position">
       <img style="width: 200px;" :src="isIcon" alt="">
-      <p class="font-style1">Seoul</p>
+      <p class="font-style2">{{ address[0] }}</p>
+      <p class="font-style2">{{ address[1] }}{{ address[2] }}</p>
       <p class="font-style2">{{nowTemp}} °C</p>
     </div>
 
@@ -23,6 +23,34 @@ import { mapState,mapGetters } from 'vuex'
 
 export default {
   name:'Weather',
+  props: {
+    lat: Number,
+    lng: Number,
+  },
+  data: function () {
+    return {
+      address: ['현재 위치는..', '', '']
+    }
+  },
+  methods: {
+    initMap: function () {
+      console.log(window.kakao.maps.services, 'kakao')
+    },
+    getAddress: function () {
+      if (this.address[0] === '현재 위치는..') {
+        const geocoder = new kakao.maps.services.Geocoder()
+        const callback = (res, status) => {
+          if (status === kakao.maps.services.Status.OK) {
+            this.address = res[0]['address_name'].split(' ')
+            console.log(res[0]['address_name'], '찐 현재위치');
+          } else {
+            console.log('실패');
+          }
+        }
+        geocoder.coord2RegionCode(this.lng, this.lat, callback)
+      }
+    },
+  },
   computed: {
     ...mapState(['seoulWeather','addWeatherData']),
     ...mapGetters(['nowTemp','maxTemp','minTemp']),
@@ -33,6 +61,15 @@ export default {
         return ''
       }
     },
+  },
+  mounted: function () {
+    const script = document.createElement('script')
+    /* global kakao */
+    script.onload = () => kakao.maps.load(this.initMap)
+    script.type = "text/javascript"
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.VUE_APP_KAKAO_API_KEY}&libraries=services&autoload=false`
+    document.head.appendChild(script)
+    this.getAddress()
   },
 }
 </script>
