@@ -67,15 +67,19 @@ export default {
     }
   },
   created: function () {
-    axios({
-      method: 'get',
-      url: `${this.$defaultUrl}/chat/rooms/`,  
-      headers: this.setHeader()
-    })
-    .then(res => {
-      console.log(res.data);
-      this.rooms = res.data['rooms']
-    })
+    if ('jwt' in localStorage) {
+      axios({
+        method: 'get',
+        url: `${this.$defaultUrl}/chat/rooms/`,  
+        headers: this.setHeader()
+      })
+      .then(res => {
+        console.log(res.data);
+        this.rooms = res.data['rooms']
+      })
+    } else {
+      this.$router.push({ name: 'Home'})
+    }
   }
 }
 </script>
