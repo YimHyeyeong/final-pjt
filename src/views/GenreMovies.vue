@@ -3,11 +3,7 @@
     <span class="bg"></span>
     <v-app id="inspire">
       <v-container >
-        <div v-if="!genreMovies.length" style="margin: 3rem;">
-          <p>{{ genreName }} 영화는 아직 없어요.</p>
-        </div>
-
-        <div v-else >
+        <div  >
           <v-row justify="space-around">
             <v-col
               cols="12"
@@ -31,7 +27,10 @@
                     </router-link>
                   </v-chip>
                 </v-chip-group>
-                <div class="moviecards">
+                <div v-if="!genreMovies.length" style="margin: 3rem;  text-align:center;">
+                <p>{{ genreName }} 영화는 아직 없어요.</p>
+              </div>
+                <div v-else class="moviecards">
                   <movie-card
                   v-for="movie in genreMovies"
                   :key="movie.id"
