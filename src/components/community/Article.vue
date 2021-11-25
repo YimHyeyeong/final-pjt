@@ -22,6 +22,13 @@
           >
             변경
           </v-btn>
+          <v-btn x-small
+            v-if="isMyArticle" 
+            @click="deleteArticle"
+            style="margin: 0.5rem;"
+          >
+            게시글 삭제
+          </v-btn>
         </div>
         <br>
         <div>
@@ -162,6 +169,17 @@ export default {
       })
       .then(() => {
         this.reviews.pop(review)
+      })
+    },
+    deleteArticle: function () {
+      axios({
+        method: 'delete',
+        url: `${this.$defaultUrl}/articles/${this.article.id}/`,  
+        headers: this.setHeader(),
+      })
+      .then(() => {
+        alert('게시글이 삭제되었어요')
+        this.$router.go()
       })
     }
   },
