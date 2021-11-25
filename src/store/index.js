@@ -31,13 +31,14 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async LoadWeatherMovie ({commit}) {
+    async LoadWeatherMovie ({commit}, data) {
+      console.log(data, '위치정보');
       const response1 = await axios({
         method:'get',
         url: 'https://api.openweathermap.org/data/2.5/weather',
         params: {
-          lat:37.56826,
-          lon: 126.977829,
+          lat: data['latitude'],
+          lon: data['longitude'],
           APPID: process.env.VUE_APP_WEATHER_APPID
         }
       })
@@ -65,7 +66,7 @@ export default new Vuex.Store({
         
         const response2 = await axios({
               method:'get',
-              url:`http://127.0.0.1:8000/genres/${genresN}/movies/`,
+              url:`https://moviereco.click/genres/${genresN}/movies/`,
             })
         console.log(response2, "???????")
         commit('LOAD_WEATHER_MOVIE', response2.data.movies)
@@ -93,7 +94,6 @@ export default new Vuex.Store({
         return minT
       } return ''
     },
-
   }
 
 })

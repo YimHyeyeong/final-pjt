@@ -8,7 +8,7 @@
             <v-col  cols="auto">
               <div style="position:relative;">
                 <img class="img-size" :src="require(`../assets/${imgUrl}.jpg`)" alt="">
-                <weather></weather>
+                <weather :lat="lat" :lng="lng"></weather>
                 <weather-movie></weather-movie>
               </div>
             </v-col>
@@ -45,7 +45,12 @@ export default {
     SimilarUser,
     GenreChoice,
     GenreMovieList,
-    
+  },
+  data: function () {
+    return {
+      lat: 0,
+      lng: 0,
+    }
   },
   computed: {
     ...mapState([
@@ -63,7 +68,14 @@ export default {
     if (!('jwt' in localStorage)) {
       this.$router.push({ name: 'Login' })
     }
-    this.$store.dispatch('LoadWeatherMovie')
+    if('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(position => {
+        let pos = position.coords
+        this.lat = pos['latitude']
+        this.lng = pos['longitude']
+        this.$store.dispatch('LoadWeatherMovie', pos)
+      })
+    } 
   },
 }
 </script>
