@@ -2,9 +2,10 @@
   <div>
     <div v-if="!article.is_finished || article.author.username === myName">
       <a @click="goProfile" class="a-align" style="width:20%; color: black;">{{ username }}</a>
-      <a @click="goMovie" class="a-align" style="width:40%; color: black;">{{ movie.title }}</a>
-      <a class="a-align" style="width:10%; color: black;"><span @click="showDetail">detail</span></a>
       <a class="a-align" style="width:10%; color: black;" v-if="!isMyArticle"><span @click="goChat">chat</span></a>
+      <span v-else style="display:inline-block; width:10%;"></span>
+      <a @click="goMovie" class="a-align" style="width:32%; color: black;">{{ movie.title }}</a>
+      <a class="a-align" style="width:10%; color: black;"><span @click="showDetail">detail</span></a>
     </div>
     <div v-if="show" style="border: 1px solid; margin: 1rem; padding: 1rem; width:80%;">
         <div style = "display: flex; justify-content:flex-end">
@@ -114,7 +115,6 @@ export default {
         const callback = (res, status) => {
           if (status === kakao.maps.services.Status.OK) {
             this.address = res[0]['address_name']
-            console.log(this.address);
           } else {
             console.log('실패');
           }

@@ -9,7 +9,8 @@
         <div style="background: none; margin:2rem 0rem;">
             <div style="border-bottom: thin solid; width:80%;">
               <span style="display:inline-block; width:25%; text-align: center;">username</span>
-              <span style="display:inline-block; width:50%; text-align: center;">movie</span>
+              <span style="display:inline-block; width:12.5%; text-align: center;"></span>
+              <span style="display:inline-block; width:40%; text-align: center;">movie</span>
             </div>
             <Article v-for="article of sortedArticles"
               :key="article.id"
