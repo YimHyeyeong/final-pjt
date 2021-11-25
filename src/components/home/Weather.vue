@@ -67,7 +67,7 @@ export default {
     /* global kakao */
     script.onload = () => kakao.maps.load(this.initMap)
     script.type = "text/javascript"
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.VUE_APP_KAKAO_API_KEY}&libraries=services&autoload=false`
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.VUE_APP_KAKAO_API_KEY}&libraries=services&autoload=false`
     document.head.appendChild(script)
     this.getAddress()
   },
