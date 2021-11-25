@@ -4,8 +4,8 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 
-Vue.prototype.$defaultUrl = 'http://13.125.210.253/';
-Vue.prototype.$webSockettUrl = 'ws://13.125.210.253/ws/chat';
+Vue.prototype.$defaultUrl = 'https://moviereco.click/';
+Vue.prototype.$webSockettUrl = 'wss://moviereco.click/ws/chat';
 Vue.config.productionTip = false
 
 new Vue({
