@@ -3,7 +3,6 @@
     
     <div style="margin-top:180px;">
       <p class="font-style1" >{{seoulWeather.main}}</p>
-      <p class="font-style2" >{{seoulWeather.description}}</p>
     </div>
 
     <div class="center-position">
@@ -12,10 +11,8 @@
       <p class="font-style2">{{nowTemp}} °C</p>
     </div>
 
-    <div style="text-align: right; margin-top:160px;" >
-      <p  class="font-style2">11-23</p>
-      <p  class="font-style2">20:57</p>
-      <p  class="font-style2">{{minTemp}} °C / {{maxTemp}} °C</p>
+    <div style="text-align: right; margin-top:200px;" >
+      <p  class="font-style1">{{minTemp}} °C / {{maxTemp}} °C</p>
     </div>
   
   </div>

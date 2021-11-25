@@ -2,9 +2,9 @@
   <div>
     <span class="bg"></span>
     <v-app id="inspire">
-      <v-container class="justify-center">
-        <h2>{{ toUsername }}</h2>
-        <div class="messages">
+      <v-container style="text-align:center; width:30rem;">
+        <h1 style="margin:2rem;">{{ toUsername }}</h1>
+        <div class="messages" >
           <message v-for="(data, idx) in chatLog" 
             :key="idx"
             :data="data"
@@ -20,7 +20,12 @@
           ></v-text-field>
           <v-btn x-large @click="sendMessage" style="margin: 0.2rem;">SEND</v-btn>
         </div>
+        <router-link style="text-decoration:none; color:black; font-size:1.3rem;" :to="{name: 'ChatRooms'}">
+          <v-icon>mdi-forum-outline</v-icon>
+          나가기
+        </router-link>
       </v-container>
+      <img  src="@/assets/actor_bg.png" alt="">
     </v-app>
   </div>
 </template>

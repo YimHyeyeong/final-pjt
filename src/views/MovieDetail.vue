@@ -4,19 +4,19 @@
       <v-app id="inspire">
         <v-container class="mt-10" >
           <v-row>
-<!--             
-            <v-col sm="0" lg="2" >
-              <v-img  src="@/assets/전통무늬1.png" alt=""></v-img>
-            </v-col> -->
+            
+            <v-col sm="0" lg="12" >
+              <v-img  src="@/assets/2222.png" alt=""></v-img>
+            </v-col>
 
             <v-col>
               <detail></detail>
             </v-col>
 
-            <!-- <v-col sm="0" lg="2" >
-              <v-img  src="@/assets/전통무늬2.png" alt=""></v-img>
-            </v-col> -->
-          
+            <v-col sm="0" lg="12" >
+              <v-img  src="@/assets/1111.png" alt=""></v-img>
+            </v-col>
+
           </v-row>
         </v-container>
       </v-app>

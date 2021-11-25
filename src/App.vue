@@ -8,13 +8,18 @@
     <v-app-bar
       src="./assets/main_bg.jpg"
       fixed
-      style="position:sticky"
+      style="position:sticky;"
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-
-      <v-toolbar-title><router-link style="text-decoration:none; color:black;" :to="{name: 'Home'}">Home</router-link></v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-title>
+        <router-link style="text-decoration:none; color:black;" :to="{name: 'Home'}">
+          <img style="width:3.5rem; margin-left:10rem;" src="./assets/한옥.png" alt="">
+        </router-link>
+        </v-toolbar-title>
       <v-spacer></v-spacer>
       <search-movie></search-movie>
+        
       
     </v-app-bar>
 
@@ -113,6 +118,7 @@
 
         </v-list-item-group>
       </v-list>
+      <img style="width:13rem; position:fixed; bottom:0; " src="./assets/꽃꽃.png" alt="">
     </v-navigation-drawer>
   </v-card>
 </div>

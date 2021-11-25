@@ -4,7 +4,7 @@
       <p>많은 평점을 매길수록 많은 추천을 해드릴 수 있어요!</p>
     </div>
     <div v-else>
-      <h2>{{ myName }}님과 유사한 패턴을 가진 분들</h2>
+      <h2 style="text-align:center;">{{ myName }}님과 유사한 패턴을 가진 분들</h2>
       <user-item v-for="user of similarUser"
         :key="user.user_id"
         :user="user"

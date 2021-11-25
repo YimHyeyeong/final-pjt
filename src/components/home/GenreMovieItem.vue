@@ -1,7 +1,7 @@
 <template>
-  <div style="margin: 2rem 0;">
-    <h2>{{ myName }}님이 좋아하는 {{ genreName }} 영화</h2>
-    <v-row style="margin: 1rem 0;">
+  <div style=" margin: 2rem 0;">
+    <h2 style="text-align:center; margin-bottom:2rem;">{{ myName }}님이 좋아하는 {{ genreName }} 영화</h2>
+    <v-row style="display:flex; justify-content:center; margin: 1rem 0;">
       <movie-card v-for="movie of randomMovies"
         :key="movie.id"
         :id="movie.id"
@@ -41,7 +41,7 @@ export default {
       .then(res => {
         this.genreName = res.data['genre_name']
         if (res.data['movies'].length > 10) {
-          this.randomMovies = _.sampleSize(res.data['movies'], 10)
+          this.randomMovies = _.sampleSize(res.data['movies'], 9)
         } else {
           this.randomMovies = res.data['movies']
         }

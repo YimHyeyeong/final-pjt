@@ -27,11 +27,13 @@
       </div>
 
       <div>
-        <button @click="createArticle">영화메이트 구하기</button>
+        <v-btn @click="createArticle">
+          <v-icon>mdi-comment-account-outline</v-icon>
+          영화메이트 구하기</v-btn>
       </div>
     
     <!-- actor -->
-      <div class="bg">
+      <div>
         <v-slide-group
           class="pa-4 mx-auto"
           style="width:75%;"

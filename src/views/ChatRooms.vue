@@ -3,14 +3,15 @@
     <span class="bg"></span>
     <v-app id="inspire">
       <v-container>
-        <h2>Direct Message</h2>
+        <h1 style="text-align:center; margin:3rem 0px;">Direct Message</h1>
         <v-card v-for="room of rooms" 
           :key="room.roomname" 
           class="mx-auto"
-          max-width="344"
+          max-width="400"
+          height="200"
           outlined
         >
-          <v-list-item three-line>
+          <v-list-item three-line style="text-align:center; margin-top:2rem;">
             <v-list-item-content>
               <v-list-item-title class="text-h5 mb-1">
                 {{ room.username }}
@@ -19,7 +20,7 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-card-actions>
+          <v-card-actions style="display:flex; justify-content:center;">
             <v-btn
               outlined
               rounded
@@ -30,7 +31,13 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+        <div style="text-align:center; margin-top:3rem;">
+
+        <router-link style="text-decoration:none; color:black; font-size:1.3rem;" :to="{name: 'Community'}">
+          <v-icon>mdi-chat-plus-outline</v-icon>  다른 사람들과 채팅하러 가기 </router-link>
+        </div>
       </v-container>
+      <img  src="@/assets/actor_bg.png" alt="">
     </v-app>
   </div>
 </template>

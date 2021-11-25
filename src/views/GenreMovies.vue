@@ -24,6 +24,7 @@
                   <v-chip
                     v-for="genre in genres"
                     :key="genre.id"
+                    @click="LoadGenreMovies"
                   >
                     <router-link style="text-decoration:none; color:black;" :to="{name: 'GenreMovies', params:{genreId:genre.id}}">
                     {{ genre.name }}
@@ -45,9 +46,10 @@
           </v-row>
         
                   
-        
+
         </div>
       </v-container>
+      <!-- <img style="position:fixed; width:10rem; bottom:0rem;" src="@/assets/꽃다발.png" alt=""> -->
     </v-app>
   </div>
 </template>

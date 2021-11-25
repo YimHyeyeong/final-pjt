@@ -65,7 +65,7 @@ export default new Vuex.Store({
         
         const response2 = await axios({
               method:'get',
-              url:`http://127.0.0.1:8000/genres/${genresN}/movies/`,
+              url:`https://moviereco.click/genres/${genresN}/movies/`,
             })
         console.log(response2, "???????")
         commit('LOAD_WEATHER_MOVIE', response2.data.movies)
@@ -93,6 +93,7 @@ export default new Vuex.Store({
         return minT
       } return ''
     },
+  
 
   }
 

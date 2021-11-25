@@ -1,5 +1,5 @@
 <template>
-  <div class="my-3">
+  <div class="my-5">
     <v-btn @click="addWishList" v-if="dataBtn.length">{{ dataBtn }}</v-btn>
     <v-btn @click="addWishList" v-else>{{ btnValue }}</v-btn>
   </div>

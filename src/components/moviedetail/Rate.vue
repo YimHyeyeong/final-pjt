@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div style="display:flex; justify-content:center; margin:0px 400px">
+    <h2 class="mb-5">총 평점 : {{ myRank }}</h2>
+    <div style="display:flex; justify-content:center; margin:0px 20rem;">
       <h4 class="my-4 me-3">내 평점:</h4>
       <v-select
         style="width:20%"
@@ -12,7 +13,7 @@
       <v-btn large class="ms-5 " @click="selectRate">sub</v-btn>
       <v-btn large class="ms-3 " @click="deleteRate">del</v-btn>
     </div>
-    <h2>총 평점 : {{ myRank }}</h2>
+    
   </div>
 </template>
 
