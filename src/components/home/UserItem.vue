@@ -1,10 +1,8 @@
 <template>
   <div style="margin: 2rem 0; text-align:center;">
     <h3>
-      <router-link class=" text-decoration-none font-style " :to="{name: 'Profile', params: { username: username }}">
-        {{ username }}
-      </router-link>
-        님이 본 영화
+      <a @click="goProfile(username)" style="color: black;">{{ username }}</a>
+      님이 본 영화
     </h3>  
   
     <v-slide-group
@@ -50,6 +48,11 @@ export default {
     return {
       username: '',
       rateMovies: [],
+    }
+  },
+  methods: {
+    goProfile: function (username) {
+      this.$router.push({name: 'Profile', params: { username: username }})
     }
   },
   computed: {

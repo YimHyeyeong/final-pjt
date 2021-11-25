@@ -3,7 +3,9 @@
    <carousel
       :per-Page="2"
       :paginationEnabled="false"
-      class="carousel-size">
+      class="carousel-size"
+      style="height:500px;"
+    >
         <slide     
           v-for="movie in weatherMovie"
           :key="movie.id"
