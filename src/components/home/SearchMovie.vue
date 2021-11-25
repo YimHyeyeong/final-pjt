@@ -39,6 +39,7 @@ export default {
           headers: this.setHeader()
         })
         .then(res => {
+          this.inputData = ''
           if ('status_code' in res.data && res.data['status_code'] === 404) {
             alert('영화를 찾을 수 없어요.')
           } else {
