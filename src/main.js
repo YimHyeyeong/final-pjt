@@ -4,8 +4,8 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 
-Vue.prototype.$defaultUrl = 'http://13.125.210.253/';
-Vue.prototype.$webSockettUrl = 'ws://13.125.210.253/ws/chat';
+Vue.prototype.$defaultUrl = 'http://127.0.0.1:8000';
+Vue.prototype.$webSockettUrl = 'ws://127.0.0.1:8000/ws/chat';
 Vue.config.productionTip = false
 
 new Vue({
