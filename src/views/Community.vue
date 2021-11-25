@@ -3,14 +3,13 @@
     <span class="bg"></span>
     <v-app id="inspire">
       <v-container >
-        <div>
         <div style="font-size:3rem; margin:2rem 0rem;">영화 같이 볼까요?</div>
         <div>{{ myName }} 님과 가까운 분의 모집글부터 노출됩니다.</div>
         <div style="background: none; margin:2rem 0rem;">
             <div style="border-bottom: thin solid; width:80%;">
               <span style="display:inline-block; width:25%; text-align: center;">username</span>
               <span style="display:inline-block; width:12.5%; text-align: center;"></span>
-              <span style="display:inline-block; width:40%; text-align: center;">movie</span>
+              <span style="display:inline-block; width:45%; text-align: center;">movie</span>
             </div>
             <Article v-for="article of sortedArticles"
               :key="article.id"
@@ -19,9 +18,8 @@
             >
             </Article>
         </div>
-        </div>
       </v-container>
-        <img style="width:25rem; position:fixed; right:0;" src="@/assets/나무.png" alt="">
+        <img style="width:22rem; position:fixed; right:0;" src="@/assets/나무.png" alt="">
     </v-app>
   </div>
 </template>

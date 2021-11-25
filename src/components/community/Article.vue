@@ -4,10 +4,10 @@
       <a @click="goProfile" class="a-align" style="width:20%; color: black;">{{ username }}</a>
       <a class="a-align" style="width:10%; color: black;" v-if="!isMyArticle"><span @click="goChat">chat</span></a>
       <span v-else style="display:inline-block; width:10%;"></span>
-      <a @click="goMovie" class="a-align" style="width:32%; color: black;">{{ movie.title }}</a>
+      <a @click="goMovie" class="a-align" style="width:36%; color: black;">{{ movie.title }}</a>
       <a class="a-align" style="width:10%; color: black;"><span @click="showDetail">detail</span></a>
     </div>
-    <div v-if="show" style="border: 1px solid; margin: 1rem; padding: 1rem; width:80%;">
+    <div v-if="show" style="border: 1px solid; margin: 1rem 2.5rem; padding: 1rem; width:70%;">
         <div style = "display: flex; justify-content:flex-end">
           <v-btn x-small @click="showDetail">X</v-btn>
         </div>
