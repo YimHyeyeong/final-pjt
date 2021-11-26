@@ -1,20 +1,22 @@
 <template>
   <div class="weather-position" @mouseover="getAddress">
-    <div style="margin-top:180px;">
+    
+    <div style="margin-top:180px; ">
       <p class="font-style1" >{{seoulWeather.main}}</p>
     </div>
 
     <div class="center-position">
-      <img style="width: 200px;" :src="isIcon" alt="">
+      <img style="width: 150px;" :src="isIcon" alt="">
       <p class="font-style2">{{ address[0] }}</p>
       <p class="font-style2">{{ address[1] }}{{ address[2] }}</p>
       <p class="font-style2">{{nowTemp}} °C</p>
     </div>
 
     <div style="text-align: right; margin-top:200px;" >
-      <p  class="font-style1">{{minTemp}} °C / {{maxTemp}} °C</p>
+      <p  style="color: white;  font-size: 40px; margin-bottom: 0;">{{minTemp}} °C / {{maxTemp}} °C</p>
     </div>
-  
+ 
+    
   </div>
 </template>
 
@@ -78,23 +80,25 @@ export default {
 .weather-position {
   position: absolute;
   width: 1000px;
-  top:120px;
-  left: 170px;
+  top:110px;
+  left: 180px;
   display: flex;
   justify-self: space-around;
+  
 }
 .center-position {
   text-align: center; 
-  margin:0px 130px; 
+  margin-right: 110px;
+  margin-left: 190px;
 }
 .font-style1 {
   color: white;
-  font-size: 60px;
+  font-size: 50px;
   margin-bottom: 0;
 }
 .font-style2 {
   color: white;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 0;
 }
 </style>

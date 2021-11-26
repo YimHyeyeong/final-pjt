@@ -8,10 +8,10 @@
           :key="room.roomname" 
           class="mx-auto"
           max-width="400"
-          height="200"
+          height="150"
           outlined
         >
-          <v-list-item three-line style="text-align:center; margin-top:2rem;">
+          <v-list-item three-line style="text-align:center; margin-top:0.5rem;">
             <v-list-item-content>
               <v-list-item-title class="text-h5 mb-1">
                 {{ room.username }}

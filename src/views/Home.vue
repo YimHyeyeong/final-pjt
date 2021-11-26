@@ -25,7 +25,7 @@
           <genre-movie-list></genre-movie-list>
         </v-container>
       <img style="position:fixed; bottom:0; width:10rem;" src="@/assets/꽃다발.png" alt="">
-      <!-- <img style="position:fixed; right:0; width:30rem;" src="@/assets/flowerr.png" alt=""> -->
+      <!-- <img style="position:fixed; right:0; width:10rem; height:13rem;" src="@/assets/8888.png" alt=""> -->
       </v-app>
   </div>
 </template>

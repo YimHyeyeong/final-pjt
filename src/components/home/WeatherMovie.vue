@@ -19,7 +19,7 @@
                 <v-img :src="`https://image.tmdb.org/t/p/original${movie.poster_path}`"></v-img>
 
                 <v-card-text style="height:7rem">
-                  <h2 class="text-h6 ">
+                  <h2 class="text-h5 text-center mt-4">
                     {{movie.title}}
                   </h2>
                 </v-card-text>
@@ -33,7 +33,7 @@
                     color="#036358"
                   >
                     <router-link class=" text-decoration-none"  :to="{name: 'MovieDetail', params: { movieId:movie.id }}">
-                    <v-btn>See more info</v-btn>
+                    <v-btn>Detail</v-btn>
                     </router-link>
                   </v-overlay>
                 </v-fade-transition>
