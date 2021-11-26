@@ -33,7 +33,7 @@
                     color="#036358"
                   >
                     <router-link class=" text-decoration-none"  :to="{name: 'MovieDetail', params: { movieId:movie.id }}">
-                    <v-btn>See more info</v-btn>
+                    <v-btn>Detail</v-btn>
                     </router-link>
                   </v-overlay>
                 </v-fade-transition>

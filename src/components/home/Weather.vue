@@ -1,7 +1,7 @@
 <template>
   <div class="weather-position" @mouseover="getAddress">
     
-    <div style="margin-top:180px;">
+    <div style="margin-top:180px; ">
       <p class="font-style1" >{{seoulWeather.main}}</p>
     </div>
 
@@ -13,7 +13,7 @@
     </div>
 
     <div style="text-align: right; margin-top:200px;" >
-      <p  style="color: white;  font-size: 50px; margin-bottom: 0;">{{minTemp}} °C / {{maxTemp}} °C</p>
+      <p  style="color: white;  font-size: 40px; margin-bottom: 0;">{{minTemp}} °C / {{maxTemp}} °C</p>
     </div>
  
     
@@ -89,16 +89,16 @@ export default {
 .center-position {
   text-align: center; 
   margin-right: 110px;
-  margin-left: 130px;
+  margin-left: 190px;
 }
 .font-style1 {
   color: white;
-  font-size: 60px;
+  font-size: 50px;
   margin-bottom: 0;
 }
 .font-style2 {
   color: white;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 0;
 }
 </style>
