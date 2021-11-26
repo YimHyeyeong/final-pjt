@@ -47,7 +47,7 @@
             :key="idx"
           >
             {{ review.author.username }}: {{ review.content }}
-            (created at : {{ created_at }})
+            (created at : {{ review.created_at }})
             <v-btn small 
               @click="delReview(review)"
               v-if="review.author.username === myName"

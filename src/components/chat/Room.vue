@@ -97,7 +97,7 @@ export default {
       this.socket = new WebSocket(`${this.$webSockettUrl}/${this.roomname}/`)
       this.socket.onmessage = ({ data }) => {
         const jsonData = JSON.parse(data)
-        const datetime = moment().format('YYYY-MM-DD HH:mm:ss')
+        const datetime = moment().tz('Asiz/Seoul').format('YYYY-MM-DD HH:mm:ss')
         this.chatLog.push(`${jsonData.from}\n${jsonData.message}\n${datetime}`)
         this.alarm('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3', jsonData.from)
       }
