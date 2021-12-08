@@ -18,7 +18,9 @@
         </router-link>
         </v-toolbar-title>
       <v-spacer></v-spacer>
-      <search-movie></search-movie>
+      <span v-if="isLogin">
+        <search-movie></search-movie>
+      </span>
         
       
     </v-app-bar>

@@ -67,11 +67,11 @@ export default {
         navigator.geolocation.getCurrentPosition(position => {
           this.position.latitude = position.coords.latitude
           this.position.longitude = position.coords.longitude
-        }, err => {
-          console.log(err)
+        }, () => {
+          alert('위치정보를 사용할 수 없습니다.\n설정을 변경해주세요.')
         })
       } else {
-        alert('위치정보를 사용할 수 없습니다.')
+        alert('위치정보를 사용할 수 없습니다.\n설정을 변경해주세요.')
       }
     },
     getDistance: function (p1, p2) {

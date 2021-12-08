@@ -74,7 +74,6 @@ export default {
         headers: this.setHeader()
       })
       .then(res => {
-        console.log(res.data);
         this.rooms = res.data['rooms']
       })
     } else {
