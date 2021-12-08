@@ -82,7 +82,9 @@ export default {
         this.lng = pos['longitude']
         this.$store.dispatch('LoadWeatherMovie', pos)
       })
-    } 
+    } else {
+      console.log('설마.. navigator 에 등록이 안되는건가');
+    }
   },
 }
 </script>
