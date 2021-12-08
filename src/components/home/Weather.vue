@@ -44,8 +44,6 @@ export default {
         const callback = (res, status) => {
           if (status === kakao.maps.services.Status.OK) {
             this.address = res[0]['address_name'].split(' ')
-          } else {
-            console.log('not ok', this.lng)
           }
         }
         geocoder.coord2RegionCode(this.lng, this.lat, callback)
