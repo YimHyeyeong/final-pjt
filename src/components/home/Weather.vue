@@ -45,7 +45,7 @@ export default {
           if (status === kakao.maps.services.Status.OK) {
             this.address = res[0]['address_name'].split(' ')
           } else {
-            alert('위치 정보를 사용할 수 없습니다.')
+            console.log('위치 정보를 사용할 수 없습니다.', this.lng);
           }
         }
         geocoder.coord2RegionCode(this.lng, this.lat, callback)
