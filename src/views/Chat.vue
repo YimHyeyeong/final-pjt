@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <span class="bg"></span> -->
     <room></room>
   </div>
 </template>

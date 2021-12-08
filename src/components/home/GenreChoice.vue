@@ -70,7 +70,6 @@ export default {
         url: `${this.$defaultUrl}/genres/`,
       })
       .then(res => {
-        console.log(res.data);
         this.genres = res.data['genres']
       })
     },
