@@ -76,12 +76,14 @@ export default {
         this.lng = pos['longitude']
         this.$store.dispatch('LoadWeatherMovie', pos)
       }, () => {
-        alert('위치정보를 확인할 수 없어요.\n서울 기준으로 검색할게요.')
-        let pos = {
-          'latitude': this.lat,
-          'longitude': this.lng
+        if ('jwt' in localStorage) {
+          alert('위치정보를 확인할 수 없어요.\n서울 기준으로 검색할게요.')
+          let pos = {
+            'latitude': this.lat,
+            'longitude': this.lng
+          }
+          this.$store.dispatch('LoadWeatherMovie', pos)
         }
-        this.$store.dispatch('LoadWeatherMovie', pos)
       })
     }
   },
