@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     initMap: function () {
-      console.log(window.kakao.maps.services, 'kakao')
+      console.log(window.kakao.maps.services)
     },
     getAddress: function () {
       if (this.address[0] === '현재 위치는..') {
@@ -44,10 +44,14 @@ export default {
         const callback = (res, status) => {
           if (status === kakao.maps.services.Status.OK) {
             this.address = res[0]['address_name'].split(' ')
-            console.log(res[0]['address_name'], '찐 현재위치');
           } else {
-            console.log('실패');
+            alert('위치 정보를 사용할 수 없습니다.')
           }
+        }
+        if (!this.lat || !this.lng) {
+          this.lat = 37.487935
+          this.lng = 126.857758
+          alert('위치 정보를 사용할 수 없네요.\n서울을 기준으로 추천해드릴게요')
         }
         geocoder.coord2RegionCode(this.lng, this.lat, callback)
       }

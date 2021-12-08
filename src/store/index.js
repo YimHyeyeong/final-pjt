@@ -32,7 +32,6 @@ export default new Vuex.Store({
   },
   actions: {
     async LoadWeatherMovie ({commit}, data) {
-      console.log(data, '위치정보');
       const response1 = await axios({
         method:'get',
         url: 'https://api.openweathermap.org/data/2.5/weather',
@@ -42,8 +41,6 @@ export default new Vuex.Store({
           APPID: process.env.VUE_APP_WEATHER_APPID
         }
       })
-        console.log()
-        console.log(response1.data,"loadweatherdata")
         commit('LOAD_WEATHER_DATA',response1.data.weather[0])
         commit('LOAD_ADD_DATA',response1.data)
 
@@ -68,7 +65,6 @@ export default new Vuex.Store({
               method:'get',
               url:`https://moviereco.click/genres/${genresN}/movies/`,
             })
-        console.log(response2, "???????")
         commit('LOAD_WEATHER_MOVIE', response2.data.movies)
     },
     setProfile: function (context, data) {
