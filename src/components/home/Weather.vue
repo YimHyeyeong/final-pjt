@@ -48,11 +48,6 @@ export default {
             console.log('not ok', this.lng)
           }
         }
-        if (!this.lat || !this.lng) {
-          console.log('위치정보를 확인할 수 없어요.\n서울 기준으로 검색할게요.');
-          this.lat = 37.487935
-          this.lng = 126.857758
-        }
         geocoder.coord2RegionCode(this.lng, this.lat, callback)
       }
     },

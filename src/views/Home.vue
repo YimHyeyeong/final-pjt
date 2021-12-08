@@ -49,8 +49,8 @@ export default {
   },
   data: function () {
     return {
-      lat: 0,
-      lng: 0,
+      lat: 37.487935,
+      lng: 126.857758,
     }
   },
   computed: {
@@ -75,8 +75,13 @@ export default {
         this.lat = pos['latitude']
         this.lng = pos['longitude']
         this.$store.dispatch('LoadWeatherMovie', pos)
-      }, err => {
-        console.log('err 발견', err);
+      }, () => {
+        alert('위치정보를 확인할 수 없어요.\n서울 기준으로 검색할게요.')
+        let pos = {
+          'latitude': this.lat,
+          'longitude': this.lng
+        }
+        this.$store.dispatch('LoadWeatherMovie', pos)
       })
     }
   },
