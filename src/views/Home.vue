@@ -72,6 +72,7 @@ export default {
     if('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(position => {
         let pos = position.coords
+        console.log('lat', pos['latitude']);
         if (!pos['latitude'] || !pos['longitude']) {
           console.log('위치정보를 확인할 수 없어요.\n서울 기준으로 검색할게요.');
           pos['latitude'] = 37.487935
