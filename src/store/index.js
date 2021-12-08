@@ -32,10 +32,6 @@ export default new Vuex.Store({
   },
   actions: {
     async LoadWeatherMovie ({commit}, data) {
-      if (!data['latitude'] || !data['longitude']) {
-        data['latitude'] = 37.487935
-        data['latitude'] = 126.857758
-      }
       const response1 = await axios({
         method:'get',
         url: 'https://api.openweathermap.org/data/2.5/weather',

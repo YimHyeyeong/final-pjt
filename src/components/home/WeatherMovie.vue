@@ -24,8 +24,6 @@
                   </h2>
                 </v-card-text>
 
-            
-
                 <v-fade-transition>
                   <v-overlay
                     v-if="hover"

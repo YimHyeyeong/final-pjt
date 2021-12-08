@@ -48,11 +48,6 @@ export default {
             alert('위치 정보를 사용할 수 없습니다.')
           }
         }
-        if (!this.lat || !this.lng) {
-          this.lat = 37.487935
-          this.lng = 126.857758
-          alert('위치 정보를 사용할 수 없네요.\n서울을 기준으로 추천해드릴게요')
-        }
         geocoder.coord2RegionCode(this.lng, this.lat, callback)
       }
     },
